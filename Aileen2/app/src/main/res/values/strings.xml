@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Aileen2</string>
+
+    <string name="about">about</string>
+    <string name="settings">settings</string>
+
+    <string name="top_chart">TopChart</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="playlist">Playlist</string>
+    <string name="account">Account</string>
+
+    <string name="history">history</string>
+    <string name="labeled">labeled</string>
+
+    <string name="search_hint">Search YouTube</string>
+    <string name="action_search">Search</string>
+
+    <string name="need_login">You need to login to see this</string>
+    <string name="login">Login</string>
+    <string name="not_logined">Not logined</string>
+
+    <string name="communication_error">Connection ERROR</string>
+
+    <string name="data">Data</string>
+
+    <string name="video_quality">Video quality</string>
+    <string-array name="video_qualities_title">
+        <item>low</item>
+        <item>middle</item>
+        <item>high</item>
+    </string-array>
+
+    <string-array name="video_qualities_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string name="video_thumbnail_quality">Video thumbnail quality</string>
+    <string-array name="video_thumbnail_qualities_title">
+        <item>Invisible</item>
+        <item>low</item>
+        <item>normal</item>
+    </string-array>
+
+    <string-array name="video_thumbnail_qualities_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string name="history_and_privacy">History and Privacy</string>
+
+    <string name="history_clean_title">Clear history</string>
+    <string name="labeled_clean_title">Clear label list</string>
+
+    <string name="history_clean_dialog">History has cleared</string>
+    <string name="labeled_clean_dialog">Label list has cleared</string>
+
+</resources>
