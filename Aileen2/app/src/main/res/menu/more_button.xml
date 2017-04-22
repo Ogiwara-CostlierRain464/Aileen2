@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/share"
+        android:id="@+id/share"/>
+
+    <item
+        android:title="@string/download"
+        android:id="@+id/download"/>
+
+    <item
+        android:id="@+id/add_playlist"
+        android:title="@string/add_playlist" />
+
+    <item
+        android:id="@+id/add_labeled"
+        android:title="@string/add_labeled" />
+</menu>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/video_qualities_title"
+        android:entryValues="@array/video_qualities_value"
+        android:key="video_quality"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/video_quality" />
+
+    <ListPreference
+        android:defaultValue="2"
+        android:entries="@array/video_thumbnail_qualities_title"
+        android:entryValues="@array/video_thumbnail_qualities_value"
+        android:key="thumbnail_quality"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/video_thumbnail_quality"
+        />
+
+</PreferenceScreen>

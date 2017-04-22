@@ -1,0 +1,53 @@
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/gray">
+
+                <Button
+                    android:id="@+id/login"
+                    style="@android:style/Widget.Material.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/account_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/not_logined"
+                    android:theme="@style/TitleText" />
+
+                <jp.ogiwara.kotlin.aileen2.utils.CircleImageView
+                    android:id="@+id/account_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="20dp"
+                    app:srcCompat="@drawable/account" />
+            </FrameLayout>
+
+            <ListView
+                android:id="@+id/accountItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </ListView>
+    </LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

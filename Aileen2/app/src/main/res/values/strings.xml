@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">Aileen2</string>
+    <string name="author">ogiwara</string>
 
     <string name="about">about</string>
     <string name="settings">settings</string>
+
+    <string name="share">share</string>
+    <string name="download">download</string>
+    <string name="add_playlist">Add to playlist</string>
+    <string name="add_labeled">Add to labeled</string>
+
+    <string name="invalid_link">Invalid YouTube link</string>
 
     <string name="top_chart">TopChart</string>
     <string name="subscribe">Subscribe</string>
@@ -19,7 +27,7 @@
     <string name="login">Login</string>
     <string name="not_logined">Not logined</string>
 
-    <string name="communication_error">Connection ERROR</string>
+    <string name="connection_error">Connection ERROR</string>
 
     <string name="data">Data</string>
 
@@ -57,4 +65,68 @@
     <string name="history_clean_dialog">History has cleared</string>
     <string name="labeled_clean_dialog">Label list has cleared</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
+
+    <!--resources>
+<string name="app_name">Aileen2</string>
+
+<string name="about">このアプリについて</string>
+<string name="settings">設定</string>
+
+<string name="top_chart">トップチャート</string>
+<string name="subscribe">登録チャンネル</string>
+<string name="playlist">プレイリスト</string>
+<string name="account">アカウント</string>
+
+<string name="history">履歴</string>
+<string name="labeled">ラベルリスト</string>
+
+<string name="search_hint">YouTubeを検索</string>
+<string name="action_search">検索</string>
+
+<string name="need_login">これを見るにはログインが必要です</string>
+<string name="login">ログイン</string>
+<string name="not_logined">未ログイン</string>
+
+<string name="connection_error">通信エラー</string>
+
+<string name="data">データ</string>
+
+<string name="video_quality">動画の品質</string>
+<string-array name="video_qualities_title">
+    <item>低画質</item>
+    <item>普通</item>
+    <item>高画質</item>
+</string-array>
+
+<string-array name="video_qualities_value">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+</string-array>
+
+<string name="video_thumbnail_quality">サムネイルの品質</string>
+<string-array name="video_thumbnail_qualities_title">
+    <item>非表示</item>
+    <item>低画質</item>
+    <item>普通</item>
+</string-array>
+
+<string-array name="video_thumbnail_qualities_value">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+</string-array>
+
+<string name="history_and_privacy">履歴とプライバシー</string>
+
+<string name="history_clean_title">履歴をクリア</string>
+<string name="labeled_clean_title">ラベルリストをクリア</string>
+
+<string name="history_clean_dialog">履歴がクリアされました</string>
+<string name="labeled_clean_dialog">ラベルリストがクリアされました</string>
+
+</resources-->
