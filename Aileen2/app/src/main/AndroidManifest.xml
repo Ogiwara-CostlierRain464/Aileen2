@@ -38,7 +38,8 @@
             android:name=".service.BackgroundAudioService"
             android:enabled="true" />
 
-        <activity android:name=".PlaylistActivity"></activity>
+        <activity android:name=".PlaylistActivity" />
+        <activity android:name=".NormalVideolistActivity" />
     </application>
 
 </manifest>

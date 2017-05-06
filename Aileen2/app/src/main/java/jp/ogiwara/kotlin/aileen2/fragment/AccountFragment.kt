@@ -2,6 +2,8 @@ package jp.ogiwara.kotlin.aileen2.fragment
 
 
 import android.Manifest
+import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.AsyncTask
 import android.os.Bundle
@@ -11,15 +13,13 @@ import android.support.v4.widget.SwipeRefreshLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import com.google.api.client.extensions.android.http.AndroidHttp
 import com.google.api.client.json.jackson2.JacksonFactory
 import com.google.api.services.youtube.YouTube
 import com.google.api.services.youtube.YouTubeRequestInitializer
 import com.squareup.picasso.Picasso
+import jp.ogiwara.kotlin.aileen2.NormalVideolistActivity
 
 import jp.ogiwara.kotlin.aileen2.R
 import jp.ogiwara.kotlin.aileen2.manager.AccountManager
@@ -56,6 +56,13 @@ class AccountFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener{
                 AccountManager.login()
             }
         }
+
+        val listItems = ArrayList<AccountItem>()
+        listItems.add(AccountItem(R.mipmap.history,getString(R.string.history),getString(R.string.history_hint)))
+        listItems.add(AccountItem(R.mipmap.label,getString(R.string.labeled),getString(R.string.labeled_hint)))
+
+        listView.adapter = AccountAdapter(context,R.layout.account_list_view_item,listItems)
+
         return row
     }
 
@@ -114,4 +121,45 @@ class AccountFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener{
         }
     }
 
-}// Required empty public constructor
+    class AccountAdapter(context: Context, val resource: Int, val items: ArrayList<AccountItem>) : ArrayAdapter<AccountItem>(context,resource,items){
+
+        val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            val view = layoutInflater.inflate(resource,null)
+
+            val element = getItem(position)
+
+            val image = view.findViewById(R.id.item_icon) as ImageView
+            val message = view.findViewById(R.id.item_message) as TextView
+            val hint = view.findViewById(R.id.item_hint) as TextView
+
+            image.setImageResource(element.icon)
+            message.text = element.message
+            hint.text = element.hint
+
+            view.setOnClickListener {
+
+                val intent = Intent(context,NormalVideolistActivity::class.java)
+
+                when(element.message){
+                    context.getString(R.string.history) -> {
+                        intent.putExtra("videoIds",ArrayList(Settings.history.toArray().toList()))
+                    }
+                    context.getString(R.string.labeled) -> {
+                        intent.putExtra("videoIds",ArrayList(Settings.labeled.toArray().toList()))
+                    }
+                    else -> {
+                        assert(false)
+                    }
+                }
+                intent.putExtra("title",element.message)
+                context.startActivity(intent)
+            }
+
+            return view
+        }
+    }
+}
+
+data class AccountItem(val icon: Int,val message: String,val hint: String)

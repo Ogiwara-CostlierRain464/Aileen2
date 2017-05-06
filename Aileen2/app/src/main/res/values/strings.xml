@@ -20,8 +20,15 @@
     <string name="history">history</string>
     <string name="labeled">labeled</string>
 
+    <string name="added_labeled">Added to labeled</string>
+
+    <string name="history_hint">Local history</string>
+    <string name="labeled_hint">Local labeled</string>
+
     <string name="search_hint">Search YouTube</string>
     <string name="action_search">Search</string>
+    <string name="search_result_for">Search result for "#"</string>
+
 
     <string name="need_login">You need to login to see this</string>
     <string name="login">Login</string>

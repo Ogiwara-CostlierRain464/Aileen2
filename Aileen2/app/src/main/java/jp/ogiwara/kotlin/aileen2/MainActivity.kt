@@ -208,7 +208,7 @@ class MainActivity : AppCompatActivity() {
 
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                val intent = Intent(applicationContext,SearchActivity::class.java)
+                val intent = Intent(baseContext,SearchActivity::class.java)
                 intent.putExtra("search_word",query)
                 startActivity(intent)
                 return false

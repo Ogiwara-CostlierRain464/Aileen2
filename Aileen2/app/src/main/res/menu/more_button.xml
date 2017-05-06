@@ -9,10 +9,6 @@
         android:id="@+id/download"/>
 
     <item
-        android:id="@+id/add_playlist"
-        android:title="@string/add_playlist" />
-
-    <item
         android:id="@+id/add_labeled"
         android:title="@string/add_labeled" />
 </menu>

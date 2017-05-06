@@ -47,6 +47,11 @@ import java.io.IOException
  */
 class BackgroundAudioService: Service() {
 
+    //This is really not good idea..
+    object GUILT{
+        var list = PositionQueue<Video>()
+    }
+
     val TAG = BackgroundAudioService::class.simpleName
 
     //region constants
@@ -124,7 +129,7 @@ class BackgroundAudioService: Service() {
             }
             ItemType.YOUTUBE_MEDIA_TYPE_VIDEO_LIST-> {
                 //playQueue = @Suppress("UNCHECKED_CAST")(intent.getSerializableExtra(YOUTUBE_TYPE_VIDEO_LIST) as PositionQueue<Video>)
-                playQueue = CommonRecyclerAdapter.TEST.list
+                playQueue = GUILT.list
                 playVideo()
             }
             else -> {

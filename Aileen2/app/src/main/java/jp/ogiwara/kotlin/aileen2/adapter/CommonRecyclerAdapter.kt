@@ -8,23 +8,17 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.PopupMenu
-import android.widget.TextView
+import android.widget.*
 import com.squareup.picasso.Picasso
 import jp.ogiwara.kotlin.aileen2.MainActivity
 import jp.ogiwara.kotlin.aileen2.R
 import jp.ogiwara.kotlin.aileen2.model.Video
 import jp.ogiwara.kotlin.aileen2.service.BackgroundAudioService
 import jp.ogiwara.kotlin.aileen2.utils.PositionQueue
+import jp.ogiwara.kotlin.aileen2.utils.Settings
 import java.io.Serializable
 
 abstract class CommonRecyclerAdapter(val activity: Activity, val data: ArrayList<Video>) : RecyclerView.Adapter<CommonRecyclerAdapter.ViewHolder>(){
-
-    object TEST{
-        var list = PositionQueue<Video>()
-    }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val cardView = holder?.itemView?.findViewById(R.id.video_item) as CardView
@@ -41,6 +35,8 @@ abstract class CommonRecyclerAdapter(val activity: Activity, val data: ArrayList
         viewCount.text = data[position].viewCount
         channelName.text = data[position].channelName
         cardView.setOnClickListener {
+            Settings.history.add(data[position].id)
+
             //TODO 再生
             val intent = Intent(activity,BackgroundAudioService::class.java)
             intent.action = BackgroundAudioService.ACTIONS.ACTION_PLAY
@@ -48,16 +44,25 @@ abstract class CommonRecyclerAdapter(val activity: Activity, val data: ArrayList
             val list = PositionQueue<Video>()
             list.add(data[position])
             intent.putExtra(BackgroundAudioService.SerializeAbleString.YOUTUBE_TYPE_VIDEO_LIST,list)
-            TEST.list = list
+            BackgroundAudioService.GUILT.list = list
             activity.startService(intent)
         }
         moreButton.setOnClickListener {
             val popup = PopupMenu(activity,it)
             popup.menuInflater.inflate(R.menu.more_button,popup.menu)
             popup.setOnMenuItemClickListener {
-                //TODO Popup menu
-
-
+                when(it.itemId){
+                    R.id.share -> {
+                        //TODO share
+                    }
+                    R.id.download -> {
+                        //TODO Download
+                    }
+                    R.id.add_labeled -> {
+                        Settings.labeled.add(data[position].id)
+                        Toast.makeText(activity,activity.getString(R.string.added_labeled),Toast.LENGTH_SHORT)
+                    }
+                }
                 true
             }
             popup.show()
